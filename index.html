@@ -1,1 +1,31 @@
-<h1>yes</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>happy wheels star test</title>
+
+    <script src="js/stars.js"></script>
+</head>
+
+<body onload="on_ready();">
+    <style>
+    body {
+        background-color: black;
+    }
+
+    </style>
+
+
+    <div>
+        <canvas id="star_canvas" width="130" height="25"></canvas>
+        <script>
+        var weighted_rating = 4.0;
+        var num_votes = 1;
+
+        paint_canvas("star_canvas", weighted_rating, num_votes);</script>
+    </div>
+
+    <input type="range" min="0" max="5" value="0" step="0.1" class="slider" id="bepis">
+
+
+</body>
+</html>
