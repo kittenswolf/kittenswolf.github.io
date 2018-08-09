@@ -20,9 +20,6 @@ function draw_star(cx, cy, spikes, outerRadius, innerRadius) {
     ctx.lineTo(cx, cy - outerRadius)
     ctx.closePath();
 
-    ctx.strokeStyle='blue';
-    ctx.stroke();
-
     ctx.fillStyle='#ffff66';
 
     ctx.fill();
@@ -53,7 +50,7 @@ function draw_star_outline(cx, cy, spikes, outerRadius, innerRadius) {
     ctx.closePath();
 
 
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 0.5;
     ctx.strokeStyle = 'black';
     ctx.stroke();
 
