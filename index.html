@@ -7,14 +7,6 @@
 </head>
 
 <body onload="on_ready();">
-    <style>
-    body {
-        background-color: black;
-    }
-
-    </style>
-
-
     <div>
         <canvas id="star_canvas" width="130" height="25"></canvas>
         <script>
@@ -24,7 +16,7 @@
         paint_canvas("star_canvas", weighted_rating, num_votes);</script>
     </div>
 
-    <input type="range" min="0" max="5" value="0" step="0.1" class="slider" id="bepis">
+    <input autocomplete="off" type="range" min="0" max="5" value="4.9" step="0.1" id="bepis">
 
 
 </body>
