@@ -9,14 +9,18 @@
 <body onload="on_ready();">
     <div>
         <canvas id="star_canvas" width="130" height="25"></canvas>
-        <script>
+    </div>
+
+    <input autocomplete="off" type="range" min="0" max="5" value="4.9" step="0.01" id="bepis">
+
+    <div id="rating_value"></div>
+
+    <script>
         var weighted_rating = 4.0;
         var num_votes = 1;
 
-        paint_canvas("star_canvas", weighted_rating, num_votes);</script>
-    </div>
-
-    <input autocomplete="off" type="range" min="0" max="5" value="4.9" step="0.1" id="bepis">
+        paint_canvas("star_canvas", weighted_rating, num_votes);
+    </script>
 
 
 </body>

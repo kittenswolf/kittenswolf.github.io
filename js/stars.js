@@ -74,7 +74,19 @@ function paint_star_canvas(canvas_id, rating) {
 
     if (rating < 4.95) {
         rect_pos = 25 * rating;
-        ctx.rect(rect_pos, 0, canvas.width, canvas.height);
+
+        // account for offset
+        pixel_offset = 1;
+
+        if(rating > 2) {
+            pixel_offset = 3;
+        }
+
+        if(rating > 4) {
+            pixel_offset = 4;
+        }
+
+        ctx.rect(pixel_offset + rect_pos, 0, canvas.width, canvas.height);
 
         ctx.fillStyle = "white";
         ctx.fill();
@@ -103,16 +115,22 @@ function average_rating(weighted_rating, num_votes) {
 function paint_canvas(canvas_id, rating, num_votes) {
     var averaged_rating = average_rating(rating, num_votes);
 
-    console.log(averaged_rating);
-
     paint_star_canvas(canvas_id, averaged_rating);
 }
 
 
 function on_ready() {
     var slider = document.getElementById("bepis");
+    var rating_div = document.getElementById("rating_value");
+
+    slider.value = Math.random() * 4 + 1;
+
+    paint_star_canvas("star_canvas", slider.value);
+    rating_div.innerHTML = "rating: " + slider.value;
 
     slider.oninput = function() {
         paint_star_canvas("star_canvas", this.value);
+
+        rating_div.innerHTML = "rating: " + slider.value;
     } 
 }
