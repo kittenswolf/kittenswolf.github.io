@@ -86,7 +86,7 @@ function paint_star_canvas(canvas_id, rating) {
             pixel_offset = 4;
         }
 
-        ctx.rect(pixel_offset + rect_pos, 0, canvas.width, canvas.height);
+        ctx.clearRect(pixel_offset + rect_pos, 0, canvas.width, canvas.height);
 
         ctx.fillStyle = "white";
         ctx.fill();
